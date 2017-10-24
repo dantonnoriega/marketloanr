@@ -6,7 +6,7 @@
 get_loan_data <- function(import = FALSE) {
 
   if(import) {
-    x <- "data-raw/market-loan-terms-master.csv"
+    x <- "data-raw/market-loan-terms-master.csv.zip"
 
     # read and clean data
     dat <- suppressMessages(readr::read_csv(x)) %>%
