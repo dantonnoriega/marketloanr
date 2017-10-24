@@ -1,0 +1,27 @@
+Package: marketloanr
+Type: Package
+Title: Parse, extract, and simulate market loan data.
+Version: 1.0
+Authors@R: as.person(c(
+    "Danton Noriega-Goodwin <danton.noriega@gmail.com> [aut, cre]",
+    "Abe Katz <abraham.katz@duke.edu> [aut]"
+  ))
+Description: Clean, extract and simulate market loan data.
+License: GPL
+LazyData: TRUE
+Depends: R (>= 3.4.0)
+Imports:
+    dplyr,
+    tibble,
+    readr,
+    stringr,
+    assertthat,
+Suggests:
+    testthat,
+    knitr,
+    rmarkdown
+RoxygenNote: 6.0.1
+VignetteBuilder: knitr
+URL: http://ropensci.github.io/gtfsr, https://github.com/ropensci/gtfsr
+BugReports: https://github.com/ropensci/gtfsr/issues
+Roxygen: list(markdown = TRUE)
