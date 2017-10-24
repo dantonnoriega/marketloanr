@@ -1,6 +1,7 @@
 #' get loan data
 #' @importFrom magrittr %>%
-#' @param x path to csv file.
+#' @param import path to csv file.
+#' @export
 
 get_loan_data <- function(import = FALSE) {
 

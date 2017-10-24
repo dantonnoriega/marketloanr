@@ -7,7 +7,7 @@
 get_loan_data(import = FALSE)
 }
 \arguments{
-\item{x}{path to csv file.}
+\item{import}{path to csv file.}
 }
 \description{
 get loan data

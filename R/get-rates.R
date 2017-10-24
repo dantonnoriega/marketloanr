@@ -1,6 +1,8 @@
 #' input a score value and extracts
 #' @param s score value
 #' @param as_vec return as vector (TRUE) or dataset (FALSE). Default TRUE
+#' @export
+
 get_rates <- function(s, as_vec = TRUE) {
 
   dat <- get_loan_data()
