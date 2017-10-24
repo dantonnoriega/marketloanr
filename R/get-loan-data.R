@@ -54,19 +54,3 @@ get_loan_data <- function(import = FALSE) {
   } else loan_data
 
 }
-
-
-#' input a score value and extracts
-#' @param s score value
-get_rates <- function(s) {
-
-  dat <- get_loan_data()
-
-  dat %>%
-    dplyr::rowwise() %>%
-    dplyr::mutate(keep = dplyr::between(s, rng_min, rng_max)) %>%
-    dplyr::filter(keep == TRUE) %>%
-    dplyr::select(-keep) %>%
-    dplyr::pull(rate)
-
-}

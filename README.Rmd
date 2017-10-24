@@ -1,0 +1,52 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
+
+# marketloanr
+
+The goal of marketloanr is to ...
+
+## Installation
+
+You can install marketloanr from github with:
+
+```{r gh-installation, eval = FALSE}
+# install.packages("devtools")
+devtools::install_github("dantonnoriega/marketloanr")
+```
+
+## Example
+
+This is a basic example which shows you how to solve a common problem:
+
+```{r example}
+# load packages
+library(marketloanr)
+library(tidyverse)
+
+# load the data
+dat <- get_loan_data()
+
+# find vector of rates given score `s`
+s = 600
+rates <- get_rates(s, as_vec = TRUE) # can get just vector of rates
+rates_df <- get_rates(s, as_vec = FALSE) # or get the filtered subset
+
+rates
+rates_df
+
+```
+
+## Current Issues
+
+- [ ] Do not understand what a `rng_min` or `rng_max` value of `1` means. Typo? Error in cleaning?
