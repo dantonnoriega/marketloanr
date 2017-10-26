@@ -6,10 +6,15 @@
 get_loan_data <- function(import = FALSE) {
 
   if(import) {
-    x <- "data-raw/market-loan-terms-master.csv.zip"
+
+    # get data from the internets
+    x <- "https://github.com/dantonnoriega/marketloanr/blob/master/data-raw/market-loan-terms-master.csv.zip?raw=true"
+
+    tmp <- tempfile(fileext = '.csv.zip')
+    download.file(x, tmp)
 
     # read and clean data
-    dat <- suppressMessages(readr::read_csv(x)) %>%
+    dat <- suppressMessages(readr::read_csv(tmp)) %>%
       dplyr::mutate_if(is.character, dplyr::funs(gsub('\\$|,|%|-', '', .))) %>%
       dplyr::select(-state, -dplyr::contains('modelyear')) %>%
       dplyr::select(name:program, LTV_index, dplyr::everything()) %>%
